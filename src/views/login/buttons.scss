@@ -1,0 +1,80 @@
+.buttons {
+
+    height: 35px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 15px;
+    
+    &__login {
+
+        background-color: lightblue;
+        color: black;
+
+    }
+
+    &__register {
+        background-color: rgb(25, 116, 201);
+        color: white;
+    }
+
+    &__add {
+        button {
+            background-color: yellow;
+            color: black;
+        }
+    }
+
+    &__delete {
+        button {
+            background-color: red;
+            color: white;
+            margin-right: 10px;
+        }
+    }
+
+    &__edit {
+        button {
+            background-color: blue;
+            color: white;
+            width: 70%;
+            height: 70%;
+        }
+    }
+
+    &__update {
+        button {
+            background-color: lightblue;
+            color: black;
+            width: 70%;
+            height: 70%;
+        }
+    }
+
+    &__delete_comment {
+        button {
+            background-color: lightcoral;
+            color: black;
+            width: 70%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+        }
+    }
+
+    &__add_comment {
+        button {
+            background-color: lightgreen;
+            color: black;
+            width: 70%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+        }
+    }
+
+
+}
