@@ -35,7 +35,3 @@ This project is a simple sign-up system for a toy food application. It allows us
 * `database.ts`: The TypeScript file for database integration.
 
 
-
-## Contact
-
-For any questions or concerns, please contact [Yossi Shor Github](https://github.com/yosshor).
