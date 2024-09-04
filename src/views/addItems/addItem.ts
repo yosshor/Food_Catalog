@@ -1,8 +1,8 @@
-import { items } from "../models/Item";
-import { addGlobalItem, removeGlobalItem } from "../controllers/ItemsController";
-import { Item, ItemCategory } from "../models/Item";
-import '../styles/addItem.scss';
-import { homePage } from "../controllers/HomeController";
+import { items } from "../../models/item";
+import { addGlobalItem, removeGlobalItem } from "../../controllers/items";
+import { Item, ItemCategory } from "../../models/item";
+import './addItem.scss';
+import { homePage } from "../../controllers/home";
 
 
 export function addItem(div: HTMLDivElement): void {

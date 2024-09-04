@@ -1,5 +1,5 @@
 import { getCart } from "../../controllers/home";
-import { Cart } from "../../models/Cart";
+import { Cart } from "../../models/cart";
 import { renderNewDivElement } from "../header/header";
 import { handleEventListeners } from "../home";
 import './cart.scss';

@@ -1,4 +1,4 @@
-const dbName = "usersDBToy";
+const dbName = "usersDB";
 const storeName = "users";
 
 

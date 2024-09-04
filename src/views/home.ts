@@ -1,9 +1,9 @@
-import { Cart } from '../models/Cart';
+import { Cart } from '../models/cart';
 import { Item, ItemCategory } from '../models/item';
 import { renderHeader, renderNewDivElement } from './header/header';
 import { renderCart } from './cart/cart';
-import '../styles/delete-edit-item.scss'
-import { removeItem } from './addItem';
+import './update/deleteEditItem.scss'
+import { removeItem } from './addItems/addItem';
 import { homePage } from '../controllers/home';
 import { renderEditItem } from '../controllers/editItem';
 

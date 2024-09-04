@@ -1,6 +1,6 @@
 import { getCart, homePage } from '../../controllers/home';
 import { Cart } from '../../models/cart';
-import { addItem } from '../addItem';
+import { addItem } from '../addItems/addItem';
 import { renderCartPage } from '../../controllers/cart';
 import { handleClickHomeButton } from '../../controllers/authentication/signup';
 
