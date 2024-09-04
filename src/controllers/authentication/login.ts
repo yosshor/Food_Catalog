@@ -1,9 +1,9 @@
-import { Email } from "../../models/Email";
+import { Email } from "../../models/email";
 import { renderLoginPage } from "../../views/login/login";
-import { renderRegisterForm } from "../../views/login/register";
+import { renderRegisterForm } from "../../views/register/register";
 import { getCurrentUser } from "./currentUser";
 import { checkEmailAndPassword } from "./indexedDb";
-import { moveToToyFoodPage } from "./signup";
+import { moveToToyFoodPage } from './signup';
 
 
 export function renderLogin(app: HTMLDivElement): void {

@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    background-color: $home-element-color;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    p {
+        margin: 0;
+    }
+}

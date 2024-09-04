@@ -1,10 +1,10 @@
-import { getCart } from "../controllers/HomeController";
-import { Cart } from "../models/cart";
-import { Item } from "../models/item";
-import { renderNewDivElement } from "./HeaderView";
-import { handleEventListeners } from "./HomeView";
-import '../styles/cart.scss';
-import { renderCheckoutPage } from "./checkout";
+import { getCart } from "../../controllers/home";
+import { Cart } from "../../models/Cart";
+import { renderNewDivElement } from "../header/header";
+import { handleEventListeners } from "../home";
+import './cart.scss';
+import { renderCheckoutPage } from "../checkout";
+
 
 export function renderCart(cart: Cart) {
     const app = document.querySelector("#app");

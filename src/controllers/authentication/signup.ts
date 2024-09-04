@@ -1,9 +1,9 @@
-import { checkEmailExists, insertUser } from "./indexedDb";
+import { checkEmailExists, insertUser } from './indexedDb';
 import { User, UserType } from "../../models/user";
-import { getAllUsers } from "./currentUser";
-import { homePage } from "../../controllers/HomeController";
-import { renderLogin } from "./login";
-import { renderNewDivElement } from "../../views/HeaderView";
+import { getAllUsers } from './currentUser';
+import { homePage } from '../home';
+import { renderLogin } from './login';
+import { renderNewDivElement } from '../../views/header/header';
 
 export async function handleClickSignUp(event: any): Promise<void> {
     try {

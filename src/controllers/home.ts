@@ -1,9 +1,9 @@
-import { renderFooter } from '../views/FooterView';
-import { renderHeader } from '../views/HeaderView';
-import { renderHomePage } from '../views/HomeView';
-import { Cart } from "../models/Cart";
-import { getAllItems, initializeItems } from './ItemsController';
-import { Item } from '../models/Item';
+import { renderFooter } from '../views/footer/footer';
+import { renderHeader } from '../views/header/header';
+import { renderHomePage } from '../views/home';
+import { Cart } from "../models/cart";
+import { getAllItems, initializeItems } from './items';
+import { Item } from '../models/item';
 
 
 

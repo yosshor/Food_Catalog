@@ -1,0 +1,66 @@
+.header {
+  //   width: 100%;
+    color: $text-color;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  
+    &__nav {
+      width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    &__logo {
+      height: 1.5rem;
+      will-change: filter;
+      transition: filter 300ms;
+      img {
+        height: 100%;
+      }
+    }
+  
+    &__menu {
+      display: flex;
+      gap: 2rem;
+  
+      a {
+        color: $text-color;
+      }
+    }
+  
+    &__icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+  
+      & > div {
+          cursor: pointer;
+  
+          :hover {
+              color: $home-element-color;
+          }
+      }
+    }
+  
+    &__user {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    i {
+      cursor: pointer;
+    }
+  }
+  
+  #signOut-button{
+    background-color: blue;
+    color: white;
+    width:80px;
+    height: 30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }

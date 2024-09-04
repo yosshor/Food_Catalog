@@ -1,4 +1,3 @@
-import { Item } from "../../models/item";
 import { User, UserType } from "../../models/user";
 
 

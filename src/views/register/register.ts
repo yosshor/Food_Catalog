@@ -1,4 +1,4 @@
-import './login.scss'
+import '../login/login.scss'
 import './register.scss'
 import { handleClickHomeButton, handleClickSignUp } from "../../controllers/authentication/signup";
 
