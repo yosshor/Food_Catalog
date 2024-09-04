@@ -1,9 +1,8 @@
-import { getCart } from "../../controllers/home";
 import { Cart } from "../../models/cart";
 import { renderNewDivElement } from "../header/header";
 import { handleEventListeners } from "../home";
+import { handleCheckoutEvent } from "../../controllers/cart";
 import './cart.scss';
-import { renderCheckoutPage } from "../checkout";
 
 
 export function renderCart(cart: Cart) {
@@ -52,11 +51,6 @@ export function renderCart(cart: Cart) {
     } catch (error) {
         console.error(error);
     }
-}
-
-function handleCheckoutEvent(event: Event) {
-    console.log('checkout');
-    renderCheckoutPage(document.querySelector('#content') as HTMLDivElement, getCart()! as Cart);
 }
 
 function renderTotalOrder(cart: Cart): string {

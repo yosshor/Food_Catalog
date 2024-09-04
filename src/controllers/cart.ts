@@ -1,7 +1,8 @@
 import { getCart } from "./home";
-import { Cart } from "../models/Cart";
+import { Cart } from "../models/cart";
 import '../views/cart/cart.scss';
 import { renderCart } from "../views/cart/cart";
+import { renderCheckoutPage } from "../views/checkout";
 
 
 /**
@@ -14,4 +15,11 @@ import { renderCart } from "../views/cart/cart";
 export function renderCartPage() {
     const cart: Cart | undefined = getCart();
     renderCart(cart!);
+}
+
+
+
+export function handleCheckoutEvent(event: Event) {
+    console.log('checkout', event.target);
+    renderCheckoutPage(document.querySelector('#content') as HTMLDivElement, getCart()! as Cart);
 }
