@@ -116,3 +116,14 @@ span.price {
     float: right;
     color: grey;
 }
+
+.show-total-price{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span{
+        padding-left: 10px;
+    }
+
+}

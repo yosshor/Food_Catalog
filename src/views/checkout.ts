@@ -69,7 +69,7 @@ export function renderCheckoutPage(div: HTMLDivElement, cart: Cart): void {
             <label>
             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
             </label>
-            <p>Total <span class="price" style="color:black"><b>$${cart.totalPrice.toFixed(2)}</b></span></p>
+            <p class="show-total-price">Total <span class="price" style="color:black"><b>$${cart.totalPrice.toFixed(2)}</b></span></p>
 
             <input id="checkoutBtn" type="submit" value="Checkout" class="btn">
         </form>
