@@ -65,7 +65,7 @@ function renderTotalOrder(cart: Cart): string {
         total += `<p><a href="#">${item.name}</a> <span class="price">$${item.price.toFixed(2)}</span></p>`
     });
     total += `<hr>
-            <p>Total <span class="price" style="color:black"><b>$${cart.totalPrice.toFixed(2)}</b></span></p>
+            <p class="show-total-price">Total <span class="price" style="color:black"><b>$${cart.totalPrice.toFixed(2)}</b></span></p>
         </div>
               <button id='checkout' type="submit" value="Continue to checkout" class="btn">Continue to checkout</button>
        </div>
