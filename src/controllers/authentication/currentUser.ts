@@ -1,6 +1,6 @@
 import { User, UserType } from "../../models/user";
 
-
+//// Gets the current user from the local storage
 export function getCurrentUser(email?: string): User | null {
     let currentUserData: User = JSON.parse(localStorage.getItem('CurrentUser') as string);
     if (!currentUserData || currentUserData === null) {
@@ -19,7 +19,7 @@ export function getCurrentUser(email?: string): User | null {
     return currentUser;
 }
 
-
+/// Gets all the users from the local storage
 export function getAllUsers(): User[] {
     const usersString = localStorage.getItem('AllUsers');
     if (!usersString) return [];

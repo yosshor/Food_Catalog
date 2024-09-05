@@ -46,24 +46,23 @@ export async function handleClickSignUp(event: any): Promise<void> {
             .catch((error) => console.error(error));
 
         moveToToyFoodPage();
-
-
-
     } catch (error) {
         console.error(error);
     }
 }
 
+// move to toy food page and remove login and signup form if exists
 export function moveToToyFoodPage(): void {
     const loginForm = document.querySelector('.login-wrapper') as HTMLFormElement;
     const register = document.querySelector('.signup-wrapper') as HTMLDivElement;
     if (loginForm) loginForm.remove();
     if (register) register.remove();
-
     homePage();
 }
 
-export function handleClickHomeButton() {
+
+// Handle signOut click => render login page
+export function handleClickSignOut() {
     //remove all elements in the body to render the login page and append app div
     const content = document.querySelector('#content') as HTMLDivElement;
     if (content) {

@@ -3,7 +3,7 @@ const storeName = "users";
 
 
 
-// Function to open the database (same as before)
+// Function to open the database 
 function openDatabase(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(dbName, 1);
@@ -109,6 +109,7 @@ function getAllInfoByEmail(email: string): Promise<any[]> {
 }
 
 
+/// Check if email exists
 export async function checkEmailExists(emailToCheck: string) {
     try {
         // Step 1: Get all records by email

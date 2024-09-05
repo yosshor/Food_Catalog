@@ -1,8 +1,8 @@
-import { getCart, homePage } from '../../controllers/home';
+import { homePage } from '../../controllers/home';
 import { Cart } from '../../models/cart';
 import { addItem } from '../addItems/addItem';
-import { renderCartPage } from '../../controllers/cart';
-import { handleClickHomeButton } from '../../controllers/authentication/signup';
+import { renderCartPage, getCart } from '../../controllers/cart';
+import { handleClickSignOut } from '../../controllers/authentication/signup';
 
 export function renderHeader() {
     let header = document.querySelector("#header");
@@ -78,7 +78,7 @@ function addEventListener() {
         cartIcon.addEventListener('click', handleCartItemsClick);
     }
     if(signOut) {
-        signOut.addEventListener('click', handleClickHomeButton)
+        signOut.addEventListener('click', handleClickSignOut)
 
     }
 }

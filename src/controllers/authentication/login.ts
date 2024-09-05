@@ -6,6 +6,7 @@ import { checkEmailAndPassword } from "./indexedDb";
 import { moveToToyFoodPage } from './signup';
 
 
+/// Render Login Page
 export function renderLogin(app: HTMLDivElement): void {
     try {
         if (!app) throw new Error('No app found');
@@ -23,6 +24,8 @@ export function renderLogin(app: HTMLDivElement): void {
     }
 }
 
+
+/// Event Handlers for Login Page
 function handleLogin(event: any): void {
     event.preventDefault();
     console.log('Login button clicked');
@@ -35,14 +38,19 @@ function handleLogin(event: any): void {
     const mail: Email | null | undefined = getCurrentUser(email);
     if(mail === null) return emailOrPassIncorrect();
     if (mail) console.log(mail.email, mail.id, mail.password)
+    checkValidEmailPass(email, password, mail);
+    event.target.reset();
+}
 
 
+// Function to check if both email and password are correct
+function checkValidEmailPass(email: string, password: string, mail: Email) {
     checkEmailAndPassword(email, password)
         .then((isValid) => {
-            
+
             if (isValid) {
                 console.log("Email and password are correct.");
-                localStorage.setItem('CurrentUser', JSON.stringify(mail))
+                localStorage.setItem('CurrentUser', JSON.stringify(mail));
                 moveToToyFoodPage();
 
             } else {
@@ -50,11 +58,10 @@ function handleLogin(event: any): void {
             }
         })
         .catch((error) => console.error(error));
-
-
-
-    event.target.reset();
 }
+
+
+/// Event Handlers for incorrect email or password
 function emailOrPassIncorrect(){
     const loginError = document.querySelector('#loginError') as HTMLFormElement;
     loginError.innerHTML = 'Email or password is incorrect.';
@@ -62,6 +69,7 @@ function emailOrPassIncorrect(){
 }
 
 
+/// Event Handlers for Register Page
 function handleRegister(event: any): void {
     try {
         event.preventDefault();

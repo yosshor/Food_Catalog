@@ -4,14 +4,9 @@ import { renderHomePage } from '../views/home';
 import { Cart } from "../models/cart";
 import { getAllItems, initializeItems } from './items';
 import { Item } from '../models/item';
+import { getCart } from './cart';
 
 
-
-export function getCart(): Cart | undefined {
-  const { cartId, userId, items, totalPrice } = JSON.parse(localStorage.getItem('cart') || '{}')
-  const cart: Cart = new Cart(cartId, userId, items, totalPrice);
-  return cart
-}
 
 
 /**

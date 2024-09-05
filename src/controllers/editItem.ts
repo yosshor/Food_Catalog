@@ -3,6 +3,7 @@ import { editItemPage } from "../views/update/editItem";
 import { homePage } from "./home";
 import { getAllItems, updateItemInGlobal } from "./items";
 
+// render edit item page with event listener
 export function renderEditItem(id: string): void {
     try {
         const content = document.querySelector("#content") as HTMLDivElement;
@@ -16,6 +17,7 @@ export function renderEditItem(id: string): void {
     }
 }
 
+// handle form submit of an update food item
 function handleSubmitUpdateItem(event: Event): void {
     try {
         event.preventDefault();

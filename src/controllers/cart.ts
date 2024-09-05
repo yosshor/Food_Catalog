@@ -1,4 +1,3 @@
-import { getCart } from "./home";
 import { Cart } from "../models/cart";
 import '../views/cart/cart.scss';
 import { renderCart } from "../views/cart/cart";
@@ -17,9 +16,15 @@ export function renderCartPage() {
     renderCart(cart!);
 }
 
-
-
+//// Handles the checkout event.
 export function handleCheckoutEvent(event: Event) {
     console.log('checkout', event.target);
     renderCheckoutPage(document.querySelector('#content') as HTMLDivElement, getCart()! as Cart);
+}
+
+//// Gets the user's cart from local storage.
+export function getCart(): Cart | undefined {
+    const { cartId, userId, items, totalPrice } = JSON.parse(localStorage.getItem('cart') || '{}')
+    const cart: Cart = new Cart(cartId, userId, items, totalPrice);
+    return cart
 }

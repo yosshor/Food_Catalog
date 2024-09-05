@@ -1,6 +1,6 @@
 import '../login/login.scss'
 import './register.scss'
-import { handleClickHomeButton, handleClickSignUp } from "../../controllers/authentication/signup";
+import { handleClickSignOut, handleClickSignUp } from "../../controllers/authentication/signup";
 
 
 
@@ -64,7 +64,7 @@ export function renderRegisterForm(div: HTMLDivElement): undefined {
         div.innerHTML = registerDiv;
         const registerForm = document.getElementById('home-btn') as HTMLButtonElement;
         if(registerForm) {
-            registerForm.addEventListener('click', handleClickHomeButton)
+            registerForm.addEventListener('click', handleClickSignOut)
         }
         div.addEventListener('submit', handleClickSignUp)
     } catch (error) {
