@@ -5,6 +5,7 @@ import './addItem.scss';
 import { homePage } from "../../controllers/home";
 
 
+/// render add item page
 export function addItem(div: HTMLDivElement): void {
     if (!div) {
         throw new Error('add item div not found');
@@ -31,8 +32,8 @@ export function addItem(div: HTMLDivElement): void {
                             <label>Category : </label>
                             <select name="category" id="category">
                             ${Object.values(ItemCategory).map(category =>
-        `<option value="${category}">${category}</option>`)
-            .join('')}
+                                `<option value="${category}">${category}</option>`)
+                                    .join('')}
                                 </select>
                         </div>
                         <div class="submit">
@@ -52,6 +53,7 @@ export function addItem(div: HTMLDivElement): void {
 }
 
 
+/// remove item
 export function removeItem(id: string): void {
     if (id) {
         const index = items.findIndex(item => item.id === id);
@@ -63,7 +65,7 @@ export function removeItem(id: string): void {
 
 }
 
-
+/// Handle add item submit event
 function handleAddItemSubmit(event: Event) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
@@ -78,7 +80,6 @@ function handleAddItemSubmit(event: Event) {
         alert("All fields are required");
         return;
     }
-
 
     const newItem = new Item(category, pic, name, Number(price) as number);
     items.push(newItem);

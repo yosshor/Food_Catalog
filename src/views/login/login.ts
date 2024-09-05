@@ -1,6 +1,8 @@
 import './login.scss'
 import './buttons.scss' 
 
+
+/// render login page
 export function renderLoginPage(): string {
     let login = `<div class='login-wrapper'>
                     <div class="header">

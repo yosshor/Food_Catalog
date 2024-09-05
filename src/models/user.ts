@@ -1,8 +1,10 @@
+/// enum for user type
 export enum UserType {
   Admin = "Admin",
   Customer = "Customer"
 }
 
+/// User model
 export class User {
   public id: string;
   public type: UserType;

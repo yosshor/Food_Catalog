@@ -1,5 +1,6 @@
 import { Item } from './item';
 
+/// cart model
 export class Cart {
   public cartId: string;
   public userId: string;
@@ -11,11 +12,15 @@ export class Cart {
     this.items = items ?? [];
     this.totalPrice = totalPrice ?? 0;
   }
+
+  /// add item to cart
   addItem(item: Item): void {
     this.items.push(item);
     this.totalPrice += item.price;
     this.updateLocalStorage();
   }
+
+  /// remove item from cart
   removeItem(id: string): void {
     const itemIndex = this.items.findIndex(item => item.id === id);
     if (itemIndex > -1) {
@@ -24,9 +29,13 @@ export class Cart {
       this.updateLocalStorage();
     }
   }
+
+  /// get item count
   getItemCount(id: string): number {
     return this.items.filter(item => item.id === id).length;
   }
+
+  /// remove all items in cart
   removeAllItemsInCart(id: string): void {
     const items = this.items.filter(item => item.id === id);
     if (items.length > 0) {
@@ -37,9 +46,13 @@ export class Cart {
     }
     this.updateLocalStorage();
   }
+
+  /// update local storage cart
   updateLocalStorage(): void {
     localStorage.setItem('cart', JSON.stringify(this));
   }
+
+  /// get cart from local storage and parse it
   getCartFromLocalStorage(): Cart {
     const cart = localStorage.getItem('cart');
     if (cart) {
@@ -47,6 +60,8 @@ export class Cart {
     }
     return new Cart();
   }
+
+  /// get total items
   totalItems(): number {
     console.log(this.items.length);
     return this.items.length ?? 0;

@@ -1,5 +1,7 @@
 import { renderNewDivElement } from "../header/header";
 
+
+/// Render Footer
 export function renderFooter() {
     let footer = document.querySelector("#footer");
     if (!footer) {

@@ -3,7 +3,7 @@ import './register.scss'
 import { handleClickSignOut, handleClickSignUp } from "../../controllers/authentication/signup";
 
 
-
+/// render register page
 export function renderRegisterForm(div: HTMLDivElement): undefined {
     try {
         if (!div) throw new Error("No div element provided");

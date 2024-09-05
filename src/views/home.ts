@@ -7,6 +7,8 @@ import { removeItem } from './addItems/addItem';
 import { homePage } from '../controllers/home';
 import { renderEditItem } from '../controllers/editItem';
 
+
+/// render home page
 export function renderHomePage(cart: Cart, items: Item[]) {
     let content = document.querySelector('#content');
     if (!content) {
@@ -46,6 +48,9 @@ export function renderHomePage(cart: Cart, items: Item[]) {
     handleEventListeners(cart, items);
 }
 
+
+
+/// add and handle event listeners
 export function handleEventListeners(cart: Cart, items: Item[], renderCartPage: boolean = false) {
     document.querySelectorAll('.add-to-order').forEach((button) => {
         button.addEventListener('click', (e) => {
@@ -88,7 +93,7 @@ export function handleEventListeners(cart: Cart, items: Item[], renderCartPage: 
     });
 }
 
-
+/// prepare order
 function prepareOrder(e: Event, items: Item[], cart: Cart, renderCartPage: boolean) {
     const id = (e.target as HTMLButtonElement).dataset.id!;
     const item = items.find((item) => item.id === id);

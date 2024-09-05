@@ -1,5 +1,8 @@
 import { Item, ItemCategory } from "../../models/item";
 import './deleteEditItem.scss';
+
+
+/// render edit item page
 export function editItemPage(item: Item) {
     const editItemPage = `
     <div class="update-item">

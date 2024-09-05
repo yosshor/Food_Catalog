@@ -2,6 +2,8 @@
 import { Cart } from '../models/cart';
 import './cart/cart.scss';
 
+
+/// render checkout page
 export function renderCheckoutPage(div: HTMLDivElement, cart: Cart): void {
     if(Number(cart.totalPrice) as number < 1){
         console.log('Cart is empty!');

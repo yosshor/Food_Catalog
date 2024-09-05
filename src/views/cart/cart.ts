@@ -4,7 +4,7 @@ import { handleEventListeners } from "../home";
 import { handleCheckoutEvent } from "../../controllers/cart";
 import './cart.scss';
 
-
+/// render cart
 export function renderCart(cart: Cart) {
     const app = document.querySelector("#app");
     if (app) app?.remove();
@@ -53,6 +53,8 @@ export function renderCart(cart: Cart) {
     }
 }
 
+
+/// render total order section
 function renderTotalOrder(cart: Cart): string {
 
     let total: string =
@@ -61,10 +63,10 @@ function renderTotalOrder(cart: Cart): string {
         <div class="container">
         <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> 
         <b>${cart.totalItems()}</b></span></h4>`;
-    cart.items.forEach(item => {
-        total += `<p><a href="#">${item.name}</a> <span class="price">$${item.price.toFixed(2)}</span></p>`
-    });
-    total += `<hr>
+            cart.items.forEach(item => {
+                total += `<p><a href="#">${item.name}</a> <span class="price">$${item.price.toFixed(2)}</span></p>`
+            });
+            total += `<hr>
             <p class="show-total-price">Total <span class="price" style="color:black"><b>$${cart.totalPrice.toFixed(2)}</b></span></p>
         </div>
               <button id='checkout' type="submit" value="Continue to checkout" class="btn">Continue to checkout</button>

@@ -4,6 +4,8 @@ import { addItem } from '../addItems/addItem';
 import { renderCartPage, getCart } from '../../controllers/cart';
 import { handleClickSignOut } from '../../controllers/authentication/signup';
 
+
+/// render header 
 export function renderHeader() {
     let header = document.querySelector("#header");
     const user = JSON.parse(localStorage.getItem('CurrentUser') as string);
@@ -45,6 +47,7 @@ export function renderHeader() {
 
 }
 
+/// render header user
 function renderHeaderUser(userName: string, cart: Cart) {
     const html = `
 
@@ -59,6 +62,8 @@ function renderHeaderUser(userName: string, cart: Cart) {
     `;
     return html;
 }
+
+/// add event listeners
 function addEventListener() {
     const home = document.querySelector("#home");
     const addItem = document.querySelector("#addItem");
@@ -83,23 +88,28 @@ function addEventListener() {
     }
 }
 
-
+/// Handle home click event => render home page
 function handleHomeClick() {
     homePage();
 }
 
+/// Handle add item click event => render add item page
 function handleAddItemClick() {
     const page = document.querySelector("#content")! as HTMLDivElement;
     addItem(page);
     console.log('AddItem');
 }
 
+
+/// Render new div element with id name as given
 export function renderNewDivElement(name: string): void {
     const element = document.createElement('div');
     element.id = name;
     document.body.appendChild(element);
 }
 
+
+/// Handle cart items click event => render cart page
 function handleCartItemsClick() {
     console.log('CartItems');
     renderCartPage();
