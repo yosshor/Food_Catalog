@@ -1,5 +1,4 @@
 .header {
-  //   width: 100%;
     color: $text-color;
     padding: 1rem 4rem;
     display: flex;
@@ -55,12 +54,3 @@
     }
   }
   
-  #signOut-button{
-    background-color: blue;
-    color: white;
-    width:80px;
-    height: 30px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-  }

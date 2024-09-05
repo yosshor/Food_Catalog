@@ -3,7 +3,7 @@ import { Cart } from '../../models/cart';
 import { addItem } from '../addItems/addItem';
 import { renderCartPage, getCart } from '../../controllers/cart';
 import { handleClickSignOut } from '../../controllers/authentication/signup';
-
+import '../../styles/buttons-bem.scss';
 
 /// render header 
 export function renderHeader() {
@@ -38,7 +38,7 @@ export function renderHeader() {
                         <p class="last">Search</p>
                         </label>
                         </div>
-                        <button type="button" id="signOut-button">SignOut</button>
+                        <button class="buttons buttons__sign-out" type="button" id="signOut-button">SignOut</button>
                 </div>
             </div>
         </div>

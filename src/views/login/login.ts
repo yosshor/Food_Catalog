@@ -1,5 +1,5 @@
 import './login.scss'
-import './buttons.scss' 
+import '../../styles/buttons-bem.scss' 
 
 
 /// render login page

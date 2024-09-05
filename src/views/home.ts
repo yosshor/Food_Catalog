@@ -2,10 +2,11 @@ import { Cart } from '../models/cart';
 import { Item, ItemCategory } from '../models/item';
 import { renderHeader, renderNewDivElement } from './header/header';
 import { renderCart } from './cart/cart';
-import './update/deleteEditItem.scss'
 import { removeItem } from './addItems/addItem';
 import { homePage } from '../controllers/home';
 import { renderEditItem } from '../controllers/editItem';
+import './update/deleteEditItem.scss'
+import '../styles/buttons-bem.scss';
 
 
 /// render home page
@@ -28,8 +29,8 @@ export function renderHomePage(cart: Cart, items: Item[]) {
                 const count = cart.getItemCount(item.id);
                 html += `<div class="item-card">
                 <img src="${item.pic}" alt="${item.name}">
-                ${user.type === 'Admin' ? `<div class="edit-delete"><span class="delete-item" data-id="${item.id}">Delete</span>
-                                            <span class="edit-item" data-id="${item.id}">Edit</span></div>` : ''}
+                ${user.type === 'Admin' ? `<div class="edit-delete"><span class="buttons buttons__delete_item" data-id="${item.id}">Delete</span>
+                                            <span class="buttons buttons__edit_item" data-id="${item.id}">Edit</span></div>` : ''}
                     <h3>${item.name}</h3>
                     <p>Price: $${item.price.toFixed(2)}</p>
                     ${count > 0 ? `<div class="item-quantity">
@@ -71,8 +72,8 @@ export function handleEventListeners(cart: Cart, items: Item[], renderCartPage: 
 
         });
     });
-    const deleteItem = document.querySelectorAll('.delete-item') as NodeListOf<HTMLButtonElement>;
-    const editItem = document.querySelectorAll('.edit-item') as NodeListOf<HTMLButtonElement>;
+    const deleteItem = document.querySelectorAll('.buttons__delete_item') as NodeListOf<HTMLButtonElement>;
+    const editItem = document.querySelectorAll('.buttons__edit_item') as NodeListOf<HTMLButtonElement>;
 
     if (deleteItem) deleteItem.forEach((button) => {
         button.addEventListener('click', (e) => {
