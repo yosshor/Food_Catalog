@@ -85,7 +85,10 @@ export function renderCheckoutPage(div: HTMLDivElement, cart: Cart): void {
         checkoutBtn.addEventListener('click', () => {
             div.innerHTML = `
             <h1>Thank you for your order</h1>
-            <p>You will receive an email confirmation shortly.</p>`
+            <p>You will receive an email confirmation shortly.</p>`;
+
+            /// clear cart
+            cart.clearCart();
         })
     }
 }

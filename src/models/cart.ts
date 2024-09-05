@@ -35,7 +35,7 @@ export class Cart {
     return this.items.filter(item => item.id === id).length;
   }
 
-  /// remove all items in cart
+  /// remove all items in cart with given id
   removeAllItemsInCart(id: string): void {
     const items = this.items.filter(item => item.id === id);
     if (items.length > 0) {
@@ -44,6 +44,13 @@ export class Cart {
         this.items.splice(itemIndex, 1);
       })
     }
+    this.updateLocalStorage();
+  }
+
+  /// clear cart
+  clearCart(){
+    this.items = [];
+    this.totalPrice = 0;
     this.updateLocalStorage();
   }
 
