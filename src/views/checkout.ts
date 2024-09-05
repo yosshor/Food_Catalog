@@ -1,6 +1,7 @@
 
 import { Cart } from '../models/cart';
 import './cart/cart.scss';
+import { renderHeader } from './header/header';
 
 
 /// render checkout page
@@ -89,6 +90,7 @@ export function renderCheckoutPage(div: HTMLDivElement, cart: Cart): void {
 
             /// clear cart
             cart.clearCart();
+            renderHeader();
         })
     }
 }
