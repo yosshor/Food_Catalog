@@ -8,6 +8,11 @@ import { renderHeader } from './header/header';
 export function renderCheckoutPage(div: HTMLDivElement, cart: Cart): void {
     if(Number(cart.totalPrice) as number < 1){
         console.log('Cart is empty!');
+        const error = document.getElementById('error') as HTMLDivElement;
+        error.style.color = 'red';
+        error.style.fontWeight = 'bold';
+        error.style.paddingLeft = '60px';
+        error.innerHTML = 'The Cart is empty!';
         return;
     }
     const checkout = `

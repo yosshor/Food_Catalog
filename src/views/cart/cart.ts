@@ -70,6 +70,7 @@ function renderTotalOrder(cart: Cart): string {
             <p class="show-total-price">Total <span class="price" style="color:black"><b>$${cart.totalPrice.toFixed(2)}</b></span></p>
         </div>
               <button id='checkout' type="submit" value="Continue to checkout" class="btn">Continue to checkout</button>
+              <p id="error"></p>
        </div>
       </div>
     </div>`
